@@ -22,6 +22,29 @@
     </div>
 
 </section>
+
+
+<!---------------------------------- Carousell  --------------------------------------->
+<section class ='sliderSection'>
+<div class="containerSlider">
+          <div class="contenuContainer">
+            <div id="slider">
+                <img src="assets/photos/pizzaGood.jpg" alt="first slide" id="slide">
+                <div id="precedent" onclick="ChangeSlide(-1)">&lt;</div>
+                <div id="suivant" onclick="ChangeSlide(1)">&gt;</div>
+            </div>
+            <div class="containerText">
+            <h1>My Pizza<i class ="fas fa-pizza-slice"></i></h1>
+                <p class = 'containerTextP'> It's experience wonderful that you will never forgate 😉😉 </p>
+                <!-- <button class="savoirPlus" type="submit">En savoir plus</button> -->            
+            </div>       
+          </div>
+        </div>
+</section>
+
+
+
+
 <!------------------------------------ About Section ------------------------------------->
 <section class="about" id='about'>
     <h4>About</h4>
@@ -188,6 +211,7 @@
 
 <?php include "includes/footer.php";   ?>
 
+<script src="slider.js"></script>
 <script type="text/javascript" src="assets/myJavaScript.js"></script>
 
 

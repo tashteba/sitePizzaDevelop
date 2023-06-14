@@ -27,16 +27,23 @@ if(isset($_POST['validateAll'])) {
 
                 $userInfo = $getInfosOfThisUser->fetch();
 
+                // Authenticate the user(admin) in my site
+                $_SESSION['auth'] = true;
+                $_SESSION['id'] = $userInfo['id'];
+                $_SESSION['lastname'] = $userInfo['lastname'];
+                $_SESSION['firstname'] = $userInfo['firstname'];
+                $_SESSION['pseudo'] = $userInfo['pseudo'];
+
                 // Redirect to page where user is logged in
-                $successMsg = $userInfo["firstname"].' '.$userInfo["lastname"].' Added succesfully !';
-                
+                header ('location: connexion.php' );
 
-        } else {
-            $errorMsg = "You already have acount in the site";
-        }
-    }else {
-    $errorMsg = "Please enter all shown fields for countinue";
-
-}
+            else {
+                $errorMsg = "You already have acount in the site";
+            }
+    }
 }
 
+}else {
+    $errorMsg = "Please enter all shown fields fot countinue";
+
+}
