@@ -11,7 +11,7 @@ if(isset($_POST['validateAll'])) {
         $user_firstname = htmlspecialchars($_POST["firstname"]);
         $user_passsword = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-        // verify user if exists
+        // verify user if exists, SELECT c'est pour récupérer 
         $checkIfUserAlreadyExist = $bdd->prepare('SELECT pseudo FROM admins WHERE pseudo = ?');
         $checkIfUserAlreadyExist->execute(array($user_pseudo));
 
@@ -27,6 +27,7 @@ if(isset($_POST['validateAll'])) {
 
                 $userInfo = $getInfosOfThisUser->fetch();
 
+                $_SESSION['password'] = true;
                 // Redirect to page where user is logged in
                 $successMsg = $userInfo["firstname"].' '.$userInfo["lastname"].' Added succesfully !';
                 

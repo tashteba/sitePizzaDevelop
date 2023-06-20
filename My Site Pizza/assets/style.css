@@ -267,6 +267,7 @@ section p
     }
     .containerTextP {
         color: black;
+        margin-top: 10%;
     }
     #slider {
         position: relative;
@@ -289,7 +290,7 @@ section p
         cursor: pointer;
         opacity: 0;
         transition: opacity 0.3s ease ;
-        top: 50%;
+        top: 40%;
     
     }
     #precedent {
@@ -480,6 +481,10 @@ section p
     color: var(--clr4);
 }
 
+.paraGraphPizza {
+    font-size:1.5rem; 
+    color:red;
+}
 /*-------------------------- Blog Section ------------------------------*/
 
 .inner-blog

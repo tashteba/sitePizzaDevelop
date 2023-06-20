@@ -1,4 +1,6 @@
 <?php session_start();
+    require('actions/showAllPizzaAction.php');
+
 ?>
 <!DOCTYPE html>
 
@@ -34,7 +36,6 @@
                 <div id="suivant" onclick="ChangeSlide(1)">&gt;</div>
             </div>
             <div class="containerText">
-            <h1>My Pizza<i class ="fas fa-pizza-slice"></i></h1>
                 <p class = 'containerTextP'> It's experience wonderful that you will never forgate 😉😉 </p>
                 <!-- <button class="savoirPlus" type="submit">En savoir plus</button> -->            
             </div>       
@@ -154,6 +155,42 @@
     </div>
 
 </section>
+
+<!---------------------------------------  Menu Of today  -------------------------------->
+<section class="menu" id="menu">
+    <h4>Our Menu Of Today</h4>
+
+        <div class="menu-content">
+
+                                
+        <?php 
+            while($pizza = $getAllPizza->fetch()){
+                ?>
+                            
+                                    
+                                    <div class="in-box">
+                                        <?= '<img src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $pizza['bin'] ) . '" />'; ?>
+                                    <div class="in-content">
+                                    <div class="star">
+                                        <i class ="fas fa-star"></i>
+                                        <i class ="fas fa-star"></i>
+                                        <i class ="fas fa-star"></i>
+                                        <i class ="fas fa-star"></i>
+                                        <i class ="fas fa-star"></i>
+                                        <h2> <?= $pizza['Title'];?></h2>
+                                        <div><p class="paraGraphPizza"><?= $pizza['Description'];?></p></div>
+                                        <div class="price"><?= $pizza['Prise'];?> €</div>
+                                        </div>
+                                        </div>
+
+                                    <br>
+            </div>
+            
+                <?php
+            }
+        ?>
+        </div>
+        </section>
 <!----------------------------Blog Section----------------------->
 
 <section class="blog" id="blog">
@@ -177,7 +214,7 @@
         <div class="blog-content">
             <div class="in-blog">
                 <div class="im">
-                    <img src="assets/photos/BestQuialty.jpg" alt="img">
+                    <img src="assets/photos/pizzaSushi.jpg" alt="img">
                     <div class="in-blog-icon">
                         <a href="#"><i class = "fas fa-calendar"></i>26th August 2022</a>
                         <a href="#"><i class = "fas fa-user"></i>Admin</a>
@@ -211,7 +248,7 @@
 
 <?php include "includes/footer.php";   ?>
 
-<script src="slider.js"></script>
+<script src="assets/slider.js"></script>
 <script type="text/javascript" src="assets/myJavaScript.js"></script>
 
 
